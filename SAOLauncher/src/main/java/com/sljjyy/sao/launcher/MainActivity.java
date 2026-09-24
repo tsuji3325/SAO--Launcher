@@ -73,12 +73,11 @@ public class MainActivity extends Activity implements OnTouchListener, OnGesture
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                onSetWallpaper();
-                return true;
+        if (item.getItemId() == R.id.action_settings) {
+            onSetWallpaper();
+            return true;
         }
-        return false;
+        return super.onOptionsItemSelected(item);
     }
 
     public void onSetWallpaper() {
